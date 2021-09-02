@@ -43,7 +43,7 @@ class Categoria extends Database
         try {
             $result = parent::connect()->prepare("UPDATE MT_categorias SET name = ? WHERE id = ?");
             $result->bindParam(1, $data['name'], PDO::PARAM_STR);
-            $result->bindParam(3, $data['id'], PDO::PARAM_INT);
+            $result->bindParam(2, $data['id'], PDO::PARAM_INT);
             return $result->execute();
         } catch (Exception $e) {
             die("Error Categoria->update_register() " . $e->getMessage());
